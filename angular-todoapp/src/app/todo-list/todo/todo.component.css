@@ -1,0 +1,17 @@
+.card{
+    margin: auto;
+    padding: 1em;
+    width: 80%;
+    height: 7em;
+    border: 0.1em solid black;
+}
+
+.btn-primary{
+    padding: 1em;
+    margin-bottom: .6em;
+    width: 6em;
+    height: 3em;
+    background: skyblue;
+    color: white;
+    border-radius: .5em;
+}
