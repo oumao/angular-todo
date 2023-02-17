@@ -11,13 +11,14 @@ export class TodolistComponent implements OnInit{
 
   todos: Todo[] = []
   todo: string = ""
-
+  
+ 
   constructor(private todoService: TodoService){}
 
   ngOnInit(): void {
-      this.todoService.getTodos().subscribe( res => {
-        console.log(res);
-        this.todos = res as Todo[]
-       } )
+    this.todoService.getTodos().subscribe(res => {
+      this.todos = res as Todo[]
+    })
   }
+
 }
