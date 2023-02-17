@@ -1,13 +1,6 @@
-export class Todo {
-    id?: number;
+export interface Todo{
+    id: number;
     title: string;
-    isDone: boolean;
-
-
-    constructor(){
-        this.id = 1;
-        this.title = '';
-        this.isDone = false;
-    }
-
+    completed: boolean;
+    user_id?: number;
 }
