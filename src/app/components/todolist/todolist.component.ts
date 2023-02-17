@@ -9,11 +9,15 @@ import { Todo } from 'src/app/models/Todo';
 })
 export class TodolistComponent implements OnInit{
 
-  todos = Todo[]
+  todos: Todo[] = []
+  todo: string = ""
 
   constructor(private todoService: TodoService){}
 
   ngOnInit(): void {
-      
+      this.todoService.getTodos().subscribe( res => {
+        console.log(res);
+        this.todos = res as Todo[]
+       } )
   }
 }
