@@ -1,6 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Todo } from 'src/app/models/Todo';
-import { TodoService } from 'src/app/services/todo.service';
 
 @Component({
   selector: 'app-todo',
@@ -8,11 +7,10 @@ import { TodoService } from 'src/app/services/todo.service';
   styleUrls: ['./todo.component.css']
 })
 export class TodoComponent {
-  @Input() todos: Todo = []
+  @Input() todo: any
+  // @Output() clickHandler = new EventEmitter()
 
-  constructor(private todoService: TodoService){}
-
-  getTodos(){
-    return this.todoService.getTodos();
-  }
+  // handleClick(){
+  //   this.clickHandler.emit(this.todo.id)
+  // }
 }
