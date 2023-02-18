@@ -7,7 +7,7 @@ import { PendingTodoComponent } from './components/pending-todo/pending-todo.com
 
 const routes: Routes = [
   {path: "", component: TodolistComponent},
-  {path: "completed", component: DoneTodosComponent}
+  {path: "completed", component: DoneTodosComponent},
   {path: "pending", component: PendingTodoComponent}
 ];
 
