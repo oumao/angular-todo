@@ -11,15 +11,22 @@ export class TodoComponent {
   @Input() todo: Todo 
 
   @Output() removeTodo = new EventEmitter<number>();
-  
-  isComplete: boolean = false
+
 
   constructor(private doneService: DoneTodosService){
     this.todo = {id: 0, title: "", completed: false}
   }
   
-  todoCompleted(event: any): void {
-    event === true? this.todo.completed = true : this.todo.completed = false
+  todoCompleted(event: any, todo: Todo): void {
+    if(event){
+      this.onAddToDones(todo);
+      todo.completed = true
+    }
+    
+  }
+
+  onAddToDones(todo: Todo): void {
+    this.doneService.addToDone(todo);
   }
 
   removeToDO(id: number): void {
