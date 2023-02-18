@@ -1,13 +1,18 @@
 nav {
-    text-align: center;
+  text-align: center;
 }
 
-nav ul{
-    display: block;
-    list-style-type: none;
+nav ul {
+  display: block;
+  list-style-type: none;
 }
 
-nav ul li{
-    display: inline;
-    padding: 10px;
+nav ul li {
+  display: inline;
+  padding: 10px;
+}
+
+nav ul li a {
+  cursor: pointer;
+  text-decoration: none;
 }
