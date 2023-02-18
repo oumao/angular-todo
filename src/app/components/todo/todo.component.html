@@ -1,13 +1,15 @@
 <div fxLayout="column" class="todo-container">
     <div fxFlex="65%">
-        <div class="todo-item" >
-            {{ todo.title }}
-            <input type="checkbox" name="" id="">
+        <div class="todo-item" fxLayout="row">
+            <h4 fxFlex="60%">{{ todo.title }}</h4>
+            <span fxFlex="40%">
+                <input type="checkbox" [(ngModel)]="isComplete" name="isComplete" (ngModelChange)="todoCompleted($event)">
+            </span>
         </div>
     </div>
     <div fxFlex="35%" fxLayoutAlign="end" fxLayout="row" class="todo-item">
         <button fxFlex="10%">Update</button> | 
-        <button fxFlex="10%">Delete</button>
+        <button fxFlex="10%" (click)="removeToDO(todo.id)">Delete</button>
     </div>
 </div><br>
 
