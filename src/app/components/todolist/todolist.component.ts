@@ -20,4 +20,8 @@ export class TodolistComponent implements OnInit{
     })
   }
 
+  onRemoveTodo(id: number): void {
+    this.todos = this.todos.filter(item => item.id !== id);
+  }
+
 }
