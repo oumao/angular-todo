@@ -3,7 +3,7 @@
         <div class="todo-item" fxLayout="row">
             <h4 fxFlex="60%">{{ todo.title }}</h4>
             <span fxFlex="40%">
-                <input type="checkbox" [(ngModel)]="isComplete" name="isComplete" (ngModelChange)="todoCompleted($event)">
+                <input type="checkbox" [(ngModel)]="todo.completed" name="isComplete" (ngModelChange)="todoCompleted($event, todo)">
             </span>
         </div>
     </div>
