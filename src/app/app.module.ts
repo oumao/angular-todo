@@ -12,6 +12,7 @@ import { SidebarComponent } from './layout/sidebar/sidebar.component';
 import { TodolistComponent } from './components/todolist/todolist.component';
 import { TodoComponent } from './components/todo/todo.component';
 import { DoneTodosComponent } from './components/done-todos/done-todos.component';
+import { PendingTodoComponent } from './components/pending-todo/pending-todo.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { DoneTodosComponent } from './components/done-todos/done-todos.component
     SidebarComponent,
     TodolistComponent,
     TodoComponent,
-    DoneTodosComponent
+    DoneTodosComponent,
+    PendingTodoComponent
   ],
   imports: [
     BrowserModule,
