@@ -1,20 +1,29 @@
 import { Injectable } from '@angular/core';
 import { Todo } from '../models/Todo'
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DoneTodosService {
   todoStore: Storage = window.localStorage
+  private todoUpdated = new Subject<void>();
+
+  todoUpdated$ = this.todoUpdated.asObservable();
+
   constructor() { }
 
-  addToDone(todos: Todo[]): void {
-    const str = JSON.stringify(todos.map(todo => ({
-      id: todo.id,
-      title: todo.title,
-      completed: todo.completed
-    })))
+  addToDone(todo: Todo): void {
+    const doneTodos = this.getToDones();
+
+    doneTodos.push(todo);
+
+    const str = JSON.stringify(doneTodos);
     this.todoStore.setItem('Dones', str);
+  }
+
+  updateTodo(){
+    this.todoUpdated.next();
   }
 
   getToDones(): Todo[] {
