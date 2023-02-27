@@ -23,5 +23,19 @@ export class TodolistComponent implements OnInit{
   onRemoveTodo(id: number): void {
     this.todos = this.todos.filter(item => item.id !== id);
   }
+  
+  identify(index: number, todo: Todo): void {
+    return todo.id;
+  }
+  
+  onAddTodo(title: string): void {
+    const todObject = {
+      id: this.todos.length + 1,
+      title: title,
+      completed: false
+    }
+    
+    this.todos.push(todObject)
+  }
 
 }
